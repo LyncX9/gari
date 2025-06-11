@@ -1,0 +1,8 @@
+streamlit
+numpy
+pygad
+Pillow
+plotly
+matplotlib
+nbformat
+nbclient
