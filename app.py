@@ -181,20 +181,19 @@ def main():
         if st.session_state.target_image is not None:
             if st.button("▶️ Start Evolution", type="primary", use_container_width=True):
                 st.session_state.max_generations = num_generations
-                progress_container = st.container()
-                metrics_container = st.container()
-                intermediate_container = st.container()
+                evolution_col1, evolution_col2, evolution_col3 = st.columns([1, 1, 2])
 
-                with progress_container:
+                with evolution_col1:
                     st.subheader("📊 Evolution Progress")
                     progress_bar = st.progress(0)
                     st.session_state.progress_bar = progress_bar
 
-                with metrics_container:
+                with evolution_col2:
+                    st.subheader("📌 Metrics")
                     metrics_cols = st.columns(3)
                     st.session_state.metrics_cols = metrics_cols
 
-                with intermediate_container:
+                with evolution_col3:
                     st.subheader("🔄 Intermediate Results")
                     st.session_state.intermediate_container = st.empty()
 
